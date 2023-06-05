@@ -2,6 +2,14 @@
 import math
 import numpy as np
 from PIL import Image
+#importacion interfaz
+
+import sys
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow, QApplication
+
+
+
 
 # Definir constantes
 WIDTH = 800  # Ancho de la imagen
@@ -200,9 +208,36 @@ def render(spheres, lights):
 
 
 # Definir la escena
-spheres = [Sphere(Vector(-1, 0, -4), 1, (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
-           Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
-lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
+#spheres = [Sphere(Vector(-1, 0, -4), 1, (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
+#           Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
+#lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
+
+
 
 # Renderizar la escena
-render(spheres, lights)
+def imprimirImagen():
+    spheres = [Sphere(Vector(-1, 0, -4), 1, (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
+            Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
+    lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
+    render(spheres, lights)
+
+
+#Inicio codigo interfaz
+class ventana(QMainWindow):
+    def __init__(self) :
+        super().__init__()
+        uic.loadUi("Interfaz.ui",self)
+        self.boton_renderizar.clicked.connect(self.fn_renderizar)
+
+    def fn_renderizar(self):
+        #poner boton para renderizar
+        imprimirImagen()
+        print("Renderizando")
+
+if __name__=='__main__':
+    app = QApplication(sys.argv)
+    GUI = ventana()
+    GUI.show()
+    sys.exit(app.exec_())
+    
+#Fin codigo interfaz
