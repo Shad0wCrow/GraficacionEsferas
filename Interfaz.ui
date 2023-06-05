@@ -327,6 +327,19 @@ QPushButton:hover{
      </rect>
     </property>
    </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>310</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>nombre archivo .png</string>
+    </property>
+   </widget>
    <zorder>label_7</zorder>
    <zorder>label_4</zorder>
    <zorder>label_3</zorder>
@@ -344,6 +357,7 @@ QPushButton:hover{
    <zorder>doubleSpinBox_2</zorder>
    <zorder>doubleSpinBox_3</zorder>
    <zorder>lineEdit</zorder>
+   <zorder>label_10</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
