@@ -199,7 +199,7 @@ def render(objects, lights):
 
 
 # Ejemplo de uso
-
+#-10 en el eje de profundidad
 # Definir objetos y luces
 sphere1 = Sphere(Vector(-2, 0, -10), 2, (1, 0, 0), specular=0.5, reflection=0.5)
 sphere2 = Sphere(Vector(2, 0, -10), 2, (0, 0, 1), specular=0.5, reflection=0.5)
