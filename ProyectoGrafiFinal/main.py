@@ -6,6 +6,7 @@ from ray import Ray
 from sphere import Sphere
 from plane import Plane
 from light import Light
+from cylinder import Cylinder
 
 # Definir constantes
 WIDTH = 800  # Ancho de la imagen
@@ -48,6 +49,39 @@ def cast_ray(ray, objects, lights, depth):
     elif isinstance(closest_object, Plane):
         normal = closest_object.normal
         surface_color = closest_object.color
+    elif isinstance(closest_object, Cylinder):
+        normal = closest_object.get_normal(point)
+        surface_color = closest_object.get_surface_color(point)
+
+        view = -ray.direction
+        color = np.array([0.0, 0.0, 0.0])
+
+        for light in lights:
+            light_dir = (light.position - point).normalize()
+            light_dist = (light.position - point).norm()
+
+            shadow_ray = Ray(point + normal * 1e-3, light_dir)
+            shadow_object = None
+
+            for obj in objects:
+                t = obj.intersect(shadow_ray)
+                if t and t < light_dist:
+                    shadow_object = obj
+                    break
+
+            if shadow_object is None:
+                diffuse = np.array(surface_color) * max(0, light_dir.dot(normal)) * light.intensity
+                specular = np.array([1.0, 1.0, 1.0]) * max(0, -reflect(light_dir, normal).dot(view)) ** 50 * light.intensity
+                color += diffuse + specular
+
+        reflection_ray = Ray(point + normal * 1e-3, reflect(ray.direction, normal))
+        reflection_color = np.array(cast_ray(reflection_ray, objects, lights, depth + 1))
+        if reflection_color is not None:
+            color += closest_object.reflection * reflection_color
+
+        color = clamp(color, 0, 1)
+        return tuple(color)
+
 
     view = -ray.direction
     color = np.array([0.0, 0.0, 0.0])
@@ -105,16 +139,19 @@ def render(objects, lights):
     image.show()
 
 # Creación de objetos y luces
-sphere_texture_path = "C:/Users/kevin/OneDrive/Imágenes/textura1.jpg"  # Ruta de la imagen de textura para la esfera
-sphere1 = Sphere(Vector(-2, 0, -5), 1, sphere_texture_path, specular=0.9, reflection=0.8)
-sphere2 = Sphere(Vector(2, 0, -5), 1, sphere_texture_path, specular=0.9, reflection=0.8)
+texture1 = "C:/Users/kevin/OneDrive/Imágenes/textura1.jpg"  # Ruta de la imagen de textura para la esfera
+texture2 = "C:/Users/kevin/OneDrive/Imágenes/textura2.jpg"  # Ruta de la imagen de textura para la esfera
+texture3 = "C:/Users/kevin/OneDrive/Imágenes/textura3.jpg"  # Ruta de la imagen de textura para la esfera
+texture4 = "C:/Users/kevin/OneDrive/Imágenes/textura4.jpg"  # Ruta de la imagen de textura para la esfera
+sphere1 = Sphere(Vector(-2, 0, -5), 1, texture2, specular=0.9, reflection=0.8)
+sphere2 = Sphere(Vector(2, 0, -5), 1, texture3, specular=0.9, reflection=0.8)
 plane = Plane(Vector(0, -1, 0), Vector(0, 1, 0), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
+cylinder = Cylinder(Vector(0, -1, -4), 0.5, 2, texture4, specular=0.7, reflection=0.3)
 light = Light(Vector(3, 2, 10), (1, 1, 1))
 
 # Definir lista de objetos y luces
-objects = [sphere1, sphere2, plane]
+objects = [sphere1, sphere2, cylinder,plane]
 lights = [light]
 
 # Renderizar la escena
 render(objects, lights)
-
