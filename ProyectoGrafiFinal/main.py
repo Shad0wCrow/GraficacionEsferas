@@ -44,8 +44,10 @@ def cast_ray(ray, objects, lights, depth):
 
     if isinstance(closest_object, Sphere):
         normal = (point - closest_object.center).normalize()
+        surface_color = closest_object.get_surface_color(point)
     elif isinstance(closest_object, Plane):
         normal = closest_object.normal
+        surface_color = closest_object.color
 
     view = -ray.direction
     color = np.array([0.0, 0.0, 0.0])
@@ -64,7 +66,7 @@ def cast_ray(ray, objects, lights, depth):
                 break
 
         if shadow_object is None:
-            diffuse = np.array(closest_object.color) * max(0, light_dir.dot(normal)) * light.intensity
+            diffuse = np.array(surface_color) * max(0, light_dir.dot(normal)) * light.intensity
             specular = np.array([1.0, 1.0, 1.0]) * max(0, -reflect(light_dir, normal).dot(view)) ** 50 * light.intensity
             color += diffuse + specular
 
@@ -103,10 +105,11 @@ def render(objects, lights):
     image.show()
 
 # Creación de objetos y luces
-sphere1 = Sphere(Vector(-2, 0, -5), 1, (1, 0, 0), specular=0.9, reflection=0.8)
-sphere2 = Sphere(Vector(2, 0, -5), 1, (0, 1, 0), specular=0.9, reflection=0.8)
+sphere_texture_path = "C:/Users/kevin/OneDrive/Imágenes/textura1.jpg"  # Ruta de la imagen de textura para la esfera
+sphere1 = Sphere(Vector(-2, 0, -5), 1, sphere_texture_path, specular=0.9, reflection=0.8)
+sphere2 = Sphere(Vector(2, 0, -5), 1, sphere_texture_path, specular=0.9, reflection=0.8)
 plane = Plane(Vector(0, -1, 0), Vector(0, 1, 0), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
-light = Light(Vector(5, 5, -10), (1, 1, 1))
+light = Light(Vector(3, 2, 10), (1, 1, 1))
 
 # Definir lista de objetos y luces
 objects = [sphere1, sphere2, plane]
@@ -114,3 +117,4 @@ lights = [light]
 
 # Renderizar la escena
 render(objects, lights)
+
