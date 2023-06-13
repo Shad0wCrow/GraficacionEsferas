@@ -185,6 +185,36 @@ def mostrarImagen(instancia_ventana):
     xPlano2 = int(instancia_ventana.xPlano2.toPlainText())
     yPlano2 = int(instancia_ventana.yPlano2.toPlainText())
     zPlano2 = int(instancia_ventana.zPlano2.toPlainText())
+    colorPlano = instancia_ventana.colorPlano.currentText()
+
+    if colorPlano == "Verde":
+        R = 0.0
+        G = 0.8
+        B = 0.0
+    elif colorPlano == "Azul":
+        R = 0.0
+        G = 0.0
+        B = 0.8
+    elif colorPlano == "Rojo":
+        R = 0.8
+        G = 0.0
+        B = 0.0
+    elif colorPlano == "Blanco":
+        R = 1.0
+        G = 1.0
+        B = 1.0
+    elif colorPlano == "Morado":
+        R = 0.6
+        G = 0.0
+        B = 0.8
+    elif colorPlano == "Anaranjado":
+        R = 1.0
+        G = 0.6
+        B = 0.0
+    elif colorPlano == "Defecto":
+        R = 0.5
+        G = 0.5
+        B = 0.5
 
     # Creación de objetos y luces
     
@@ -201,7 +231,7 @@ def mostrarImagen(instancia_ventana):
     
     sphere1 = Sphere(Vector(xEsferaUno, yEsferaUno, zEsferaUno), rEsferaUno, texturaE1, specular=0.9, reflection=0.8)
     sphere2 = Sphere(Vector(xEsferaDos, yEsferaDos, zEsferaDos), rEsferaDos, texturaE2, specular=0.9, reflection=0.8)
-    plane = Plane(Vector(xPlano1, yPlano1, zPlano1), Vector(xPlano2, yPlano2, zPlano2), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
+    plane = Plane(Vector(xPlano1, yPlano1, zPlano1), Vector(xPlano2, yPlano2, zPlano2), (R, G, B), specular=0.5, reflection=0.4)
     cylinder = Cylinder(Vector(xCilindro, yCilindro, zCilindro), rCilindro, aCilindro, texturaC, specular=0.7, reflection=0.3)
     light = Light(Vector(3, 2, 10), (1, 1, 1))
     # Definir lista de objetos y luces

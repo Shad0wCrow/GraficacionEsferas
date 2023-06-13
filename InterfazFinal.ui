@@ -90,7 +90,7 @@ QTabWidget::pane {
 </string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -106,7 +106,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -142,6 +142,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -166,6 +172,12 @@ QTabWidget::pane {
         <width>31</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
@@ -347,6 +359,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -396,6 +414,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -441,7 +465,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -562,7 +586,7 @@ QTabWidget::pane {
 	}</string>
       </property>
       <property name="text">
-       <string>PIRAMIDE</string>
+       <string>CILINDRO</string>
       </property>
      </widget>
      <widget class="QTextEdit" name="xCilindro">
@@ -575,7 +599,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -611,6 +635,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -635,6 +665,12 @@ QTabWidget::pane {
         <width>31</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
@@ -798,7 +834,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -835,7 +871,7 @@ QTabWidget::pane {
        </rect>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -871,6 +907,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -895,6 +937,12 @@ QTabWidget::pane {
         <width>31</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
@@ -940,6 +988,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -984,6 +1038,12 @@ QTabWidget::pane {
         <height>31</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{ 
 	background: #fff;
@@ -1011,7 +1071,7 @@ QTabWidget::pane {
       </property>
       <item>
        <property name="text">
-        <string>Rojo</string>
+        <string>Defecto</string>
        </property>
       </item>
       <item>
@@ -1026,17 +1086,17 @@ QTabWidget::pane {
       </item>
       <item>
        <property name="text">
+        <string>Rojo</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
         <string>Blanco</string>
        </property>
       </item>
       <item>
        <property name="text">
         <string>Morado</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Amarillo</string>
        </property>
       </item>
       <item>
