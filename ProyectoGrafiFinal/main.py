@@ -8,6 +8,11 @@ from plane import Plane
 from light import Light
 from cylinder import Cylinder
 
+#importacion para la interfaz
+import sys
+from PyQt5 import uic
+from PyQt5.QtWidgets import QMainWindow, QApplication,QTextEdit
+
 # Definir constantes
 WIDTH = 800  # Ancho de la imagen
 HEIGHT = 600  # Alto de la imagen
@@ -138,20 +143,91 @@ def render(objects, lights):
 
     image.show()
 
-# Creación de objetos y luces
-texture1 = "C:/Users/kevin/OneDrive/Imágenes/textura1.jpg"  # Ruta de la imagen de textura para la esfera
-texture2 = "C:/Users/kevin/OneDrive/Imágenes/textura2.jpg"  # Ruta de la imagen de textura para la esfera
-texture3 = "C:/Users/kevin/OneDrive/Imágenes/textura3.jpg"  # Ruta de la imagen de textura para la esfera
-texture4 = "C:/Users/kevin/OneDrive/Imágenes/textura4.jpg"  # Ruta de la imagen de textura para la esfera
-sphere1 = Sphere(Vector(-2, 0, -5), 1, texture2, specular=0.9, reflection=0.8)
-sphere2 = Sphere(Vector(2, 0, -5), 1, texture3, specular=0.9, reflection=0.8)
-plane = Plane(Vector(0, -1, 0), Vector(0, 1, 0), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
-cylinder = Cylinder(Vector(0, -1, -4), 0.5, 2, texture4, specular=0.7, reflection=0.3)
-light = Light(Vector(3, 2, 10), (1, 1, 1))
+def escogerTextura(valor):
+    if valor == "Cuadros":
+        textura = "C:/Users/mairon/Desktop/GraficacionEsferas/ProyectoGrafiFinal/textura1.jpg"
+    elif valor == "Piedras":
+        textura = "C:/Users/mairon/Desktop/GraficacionEsferas/ProyectoGrafiFinal/textura2.jpg"
+    elif valor == "Abstract":
+        textura = "C:/Users/mairon/Desktop/GraficacionEsferas/ProyectoGrafiFinal/textura3.jpg"
+    else:
+        textura = "C:/Users/mairon/Desktop/GraficacionEsferas/ProyectoGrafiFinal/textura4.jpg" 
+    
+    return textura
 
-# Definir lista de objetos y luces
-objects = [sphere1, sphere2, cylinder,plane]
-lights = [light]
+def mostrarImagen(instancia_ventana):
+    #inicializacion esfera 1
+    xEsferaUno = int(instancia_ventana.xEsfera1.toPlainText())
+    yEsferaUno = int(instancia_ventana.yEsfera1.toPlainText())
+    zEsferaUno = int(instancia_ventana.zEsfera1.toPlainText())
+    rEsferaUno = int(instancia_ventana.radioE1.value())
+    texturaE1 = escogerTextura(instancia_ventana.texturaE1.currentText())
+    
+    #inicializacion esfera 2
+    xEsferaDos = int(instancia_ventana.xEsfera2.toPlainText())
+    yEsferaDos = int(instancia_ventana.yEsfera2.toPlainText())
+    zEsferaDos = int(instancia_ventana.zEsfera2.toPlainText())
+    rEsferaDos = int(instancia_ventana.radioE2.value())
+    texturaE2 = escogerTextura(instancia_ventana.texturaE2.currentText())
+    
+    #inicializacion cilindro 3
+    xCilindro = int(instancia_ventana.xCilindro.toPlainText())
+    yCilindro = int(instancia_ventana.yCilindro.toPlainText())
+    zCilindro = int(instancia_ventana.zCilindro.toPlainText())
+    rCilindro = int(instancia_ventana.radioCilindro.value())
+    aCilindro = int(instancia_ventana.alturaCilindro.value())
+    texturaC = escogerTextura(instancia_ventana.texturaC.currentText())
+    
+    #inicializacion plano 4
+    xPlano1 = int(instancia_ventana.xPlano1.toPlainText())
+    yPlano1 = int(instancia_ventana.yPlano1.toPlainText())
+    zPlano1 = int(instancia_ventana.zPlano1.toPlainText())
+    xPlano2 = int(instancia_ventana.xPlano2.toPlainText())
+    yPlano2 = int(instancia_ventana.yPlano2.toPlainText())
+    zPlano2 = int(instancia_ventana.zPlano2.toPlainText())
 
-# Renderizar la escena
-render(objects, lights)
+    # Creación de objetos y luces
+    
+    #texture1   # Ruta de la imagen de textura para la esfera
+    #texture2 =   # Ruta de la imagen de textura para la esfera
+    #texture3 =   # Ruta de la imagen de textura para la esfera
+    #texture4 =  # Ruta de la imagen de textura para la esfera
+    
+    #sphere1 = Sphere(Vector(-2, 0, -5), 1, texture2, specular=0.9, reflection=0.8)
+    #sphere2 = Sphere(Vector(2, 0, -5), 1, texture3, specular=0.9, reflection=0.8)
+    #plane = Plane(Vector(0, -1, 0), Vector(0, 1, 0), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
+    #cylinder = Cylinder(Vector(0, -1, -4), 0.5, 2, texture4, specular=0.7, reflection=0.3)
+    #light = Light(Vector(3, 2, 10), (1, 1, 1))
+    
+    sphere1 = Sphere(Vector(xEsferaUno, yEsferaUno, zEsferaUno), rEsferaUno, texturaE1, specular=0.9, reflection=0.8)
+    sphere2 = Sphere(Vector(xEsferaDos, yEsferaDos, zEsferaDos), rEsferaDos, texturaE2, specular=0.9, reflection=0.8)
+    plane = Plane(Vector(xPlano1, yPlano1, zPlano1), Vector(xPlano2, yPlano2, zPlano2), (0.5, 0.5, 0.5), specular=0.5, reflection=0.4)
+    cylinder = Cylinder(Vector(xCilindro, yCilindro, zCilindro), rCilindro, aCilindro, texturaC, specular=0.7, reflection=0.3)
+    light = Light(Vector(3, 2, 10), (1, 1, 1))
+    # Definir lista de objetos y luces
+    objects = [sphere1, sphere2, cylinder,plane]
+    lights = [light]
+
+    # Renderizar la escena
+    render(objects, lights)
+
+
+
+#Inicio codigo interfaz
+class ventana(QMainWindow):
+    def __init__(self) :
+        super().__init__()
+        uic.loadUi("InterfazFinal.ui",self)
+        self.boton_renderizar.clicked.connect(self.fn_renderizar) #asignamos un metodo de accion al boton
+        
+    def fn_renderizar(self):
+        #llamado a la renderizacion
+        print("Renderizando....")
+        mostrarImagen(self)
+
+
+if __name__=='__main__':
+    app = QApplication(sys.argv)
+    GUI = ventana()
+    GUI.show()
+    sys.exit(app.exec_())

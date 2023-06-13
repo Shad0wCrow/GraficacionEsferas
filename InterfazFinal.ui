@@ -56,7 +56,7 @@
      <number>1</number>
     </property>
    </widget>
-   <widget class="QTabWidget" name="colorE2">
+   <widget class="QTabWidget" name="Ventanas">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -90,7 +90,7 @@ QTabWidget::pane {
 </string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -99,7 +99,7 @@ QTabWidget::pane {
      <widget class="QTextEdit" name="xEsfera1">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>70</x>
         <y>190</y>
         <width>31</width>
         <height>31</height>
@@ -136,7 +136,7 @@ QTabWidget::pane {
      <widget class="QTextEdit" name="zEsfera1">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>170</x>
         <y>190</y>
         <width>31</width>
         <height>31</height>
@@ -231,7 +231,7 @@ QTabWidget::pane {
        <rect>
         <x>130</x>
         <y>110</y>
-        <width>62</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -252,56 +252,36 @@ QTabWidget::pane {
        </font>
       </property>
       <property name="text">
-       <string>Color</string>
+       <string>Textura</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="colorE1">
+     <widget class="QComboBox" name="texturaE1">
       <property name="geometry">
        <rect>
         <x>130</x>
         <y>60</y>
-        <width>61</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
       <item>
        <property name="text">
-        <string>Rojo</string>
+        <string>Cuadros</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Verde</string>
+        <string>Piedras</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Azul</string>
+        <string>Abstract</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>Blanco</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Morado</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Amarillo</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>New Item</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Anaranjado</string>
+        <string>Madera</string>
        </property>
       </item>
      </widget>
@@ -353,7 +333,7 @@ QTabWidget::pane {
        <rect>
         <x>130</x>
         <y>110</y>
-        <width>62</width>
+        <width>71</width>
         <height>21</height>
        </rect>
       </property>
@@ -361,7 +341,7 @@ QTabWidget::pane {
      <widget class="QTextEdit" name="zEsfera2">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>170</x>
         <y>190</y>
         <width>31</width>
         <height>31</height>
@@ -454,7 +434,7 @@ QTabWidget::pane {
      <widget class="QTextEdit" name="xEsfera2">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>70</x>
         <y>190</y>
         <width>31</width>
         <height>31</height>
@@ -488,16 +468,6 @@ QTabWidget::pane {
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_7">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>60</y>
-        <width>61</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_16">
       <property name="geometry">
        <rect>
@@ -514,19 +484,49 @@ QTabWidget::pane {
        </font>
       </property>
       <property name="text">
-       <string>Color</string>
+       <string>Textura</string>
       </property>
+     </widget>
+     <widget class="QComboBox" name="texturaE2">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Cuadros</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Piedras</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Abstract</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Madera</string>
+       </property>
+      </item>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
-      <string>Piramide</string>
+      <string>Cilindro</string>
      </attribute>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>50</y>
+        <y>40</y>
         <width>61</width>
         <height>31</height>
        </rect>
@@ -538,7 +538,7 @@ QTabWidget::pane {
        </font>
       </property>
       <property name="text">
-       <string>Color</string>
+       <string>Textura</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -565,11 +565,11 @@ QTabWidget::pane {
        <string>PIRAMIDE</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="xPiramide1">
+     <widget class="QTextEdit" name="xCilindro">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>140</y>
+        <x>70</x>
+        <y>190</y>
         <width>31</width>
         <height>31</height>
        </rect>
@@ -602,11 +602,11 @@ QTabWidget::pane {
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
-     <widget class="QTextEdit" name="yPiramide1">
+     <widget class="QTextEdit" name="yCilindro">
       <property name="geometry">
        <rect>
         <x>120</x>
-        <y>140</y>
+        <y>190</y>
         <width>31</width>
         <height>31</height>
        </rect>
@@ -627,21 +627,11 @@ QTabWidget::pane {
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
-     <widget class="QComboBox" name="colorPiramide">
+     <widget class="QTextEdit" name="zCilindro">
       <property name="geometry">
        <rect>
-        <x>130</x>
-        <y>60</y>
-        <width>61</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="zPiramide1">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>140</y>
+        <x>170</x>
+        <y>190</y>
         <width>31</width>
         <height>31</height>
        </rect>
@@ -666,7 +656,7 @@ QTabWidget::pane {
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>100</y>
+        <y>160</y>
         <width>61</width>
         <height>31</height>
        </rect>
@@ -681,91 +671,92 @@ QTabWidget::pane {
        <string>Posición</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="xPiramide2">
+     <widget class="QComboBox" name="texturaC">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>180</y>
-        <width>31</width>
+        <x>130</x>
+        <y>50</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Cuadros</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Piedras</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Abstract</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Madera</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>80</y>
+        <width>61</width>
         <height>31</height>
        </rect>
       </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit{ 
-	background: #fff;
-	font-size: 13px;
-	color: #000;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 5px;
-}</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+      <property name="text">
+       <string>Altura</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="yPiramide2">
+     <widget class="QSpinBox" name="alturaCilindro">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>180</y>
-        <width>31</width>
-        <height>31</height>
+        <x>130</x>
+        <y>90</y>
+        <width>71</width>
+        <height>22</height>
        </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit{ 
-	background: #fff;
-	font-size: 13px;
-	color: #000;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 5px;
-}</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
-     <widget class="QTextEdit" name="zPiramide2">
+     <widget class="QDoubleSpinBox" name="radioCilindro">
       <property name="geometry">
        <rect>
-        <x>160</x>
-        <y>180</y>
-        <width>31</width>
+        <x>130</x>
+        <y>130</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>120</y>
+        <width>51</width>
         <height>31</height>
        </rect>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit{ 
-	background: #fff;
-	font-size: 13px;
-	color: #000;
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 5px;
-}</string>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
+      <property name="text">
+       <string>Radio</string>
       </property>
      </widget>
     </widget>
@@ -921,16 +912,6 @@ QTabWidget::pane {
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
-     <widget class="QComboBox" name="colorPlano">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>60</y>
-        <width>61</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
@@ -1019,9 +1000,54 @@ QTabWidget::pane {
        <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
      </widget>
+     <widget class="QComboBox" name="colorPlano">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>60</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>Rojo</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Verde</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Azul</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Blanco</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Morado</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Amarillo</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Anaranjado</string>
+       </property>
+      </item>
+     </widget>
     </widget>
    </widget>
-   <zorder>colorE2</zorder>
+   <zorder>Ventanas</zorder>
    <zorder>boton_renderizar</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

@@ -200,67 +200,13 @@ def render(spheres, lights):
             # Asignar el color al píxel
             pixels[i, j] = tuple(int(c * 255) for c in color)
     # Guardar la imagen
-    image.save("output.png")
+    image.save("primeraVersion.png")
     # Mostrar la imagen
     image.show()
 
 
-# Definir la escena
-#spheres = [Sphere(Vector(-1, 0, -4), 1, (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
-#           Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
-#lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
+spheres = [ Sphere(Vector(-1, 0, -4) , 1 , (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
+        Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
+lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
 
-
-
-# Renderizar la escena
-
-#Agrupe la inicializacion de los valores en un solo metodo
-def imprimirImagen(instancia_ventana):
-
-    #Tomamos los valores de las cajas de la primer pestaña
-    xEsferaUno = int(instancia_ventana.xEsfera1.toPlainText())
-    yEsferaUno = int(instancia_ventana.yEsfera1.toPlainText())
-    zEsferaUno = int(instancia_ventana.zEsfera1.toPlainText())
-    rEsferaUno = int(instancia_ventana.radioE1.value())
-    
-    #Tomamos los valores de las cajas de la segunda pestaña
-    xEsferaDos = int(instancia_ventana.xEsfera2.toPlainText())
-    yEsferaDos = int(instancia_ventana.yEsfera2.toPlainText())
-    zEsferaDos = int(instancia_ventana.zEsfera2.toPlainText())
-    rEsferaDos = int(instancia_ventana.radioE2.value())
-
-    #Coordenadas ideales esfera 1:  Sphere(Vector(-1, 0, -4) , 1 , (0.6, 0.7, 0.8)
-    #Coordenadas ideales esfera 2: Sphere(Vector(1.5, -0.5, -6), 2, (0.9, 0.8, 0.2)
-
-    spheres = [Sphere(Vector(xEsferaUno, yEsferaUno, zEsferaUno), rEsferaUno , (0.6, 0.7, 0.8)),  # Esfera azulada a la izquierda
-            Sphere(Vector(xEsferaDos, yEsferaDos, zEsferaDos), rEsferaDos, (0.9, 0.8, 0.2))]  # Esfera amarillenta a la derecha
-    lights = [Light(Vector(10, 10, 10), 1.5)]  # Luz blanca arriba a la derecha
-    render(spheres, lights)
-
-#creacion esfera
-
-#fin creacion esfera
-
-
-#Inicio codigo interfaz
-
-class ventana(QMainWindow):
-    def __init__(self) :
-        super().__init__()
-        uic.loadUi("Interfaz.ui",self)
-        self.boton_renderizar.clicked.connect(self.fn_renderizar) #asignamos un metodo de accion al boton
-        
-    def fn_renderizar(self):
-        #llamado a la renderizacion
-        print("Renderizando....")
-        imprimirImagen(self)
-        
-    
-
-if __name__=='__main__':
-    app = QApplication(sys.argv)
-    GUI = ventana()
-    GUI.show()
-    sys.exit(app.exec_())
-    
-#Fin codigo interfaz
+render(spheres, lights)
